@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'blockcanaryex'
+
+block {
+    debugEnabled true //在debug模式下开启方法采样，默认为true
+    releaseEnabled false //在release模式下开启方法采样，默认为false
+    excludePackages = [] //不希望进行方法采样的包名, 比如: ['com.android', 'android.support']
+    excludeClasses = [] //不希望进行方法采样的类名
+    includePackages = [] //指定开启方法采样的包名，如果不为空，则其它没有包括进来的包都不会开启方法采样
+
+    scope {
+        project true //开启主项目代码方法采样，默认为true
+        projectLocalDep false //开启主项目本地libs代码(比如.jar)方法采样，默认为false,
+        subProject true //开启子项目代码方法采样，默认为true
+        subProjectLocalDep false //开启子项目本地libs方法采样，默认为false
+        externalLibraries true //开启第三方libs方法采样，默认为false
+    }
+}
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.android.rdc.librarysystem"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.android.support:design:26.1.0'
+    compile 'com.contrarywind:Android-PickerView:3.2.4'
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'org.litepal.android:core:1.6.0'
+    compile 'com.github.ivanljt:AndroidUtil:v1.0.2'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    compile 'org.greenrobot:eventbus:3.1.1'
+    compile 'com.oguzdev:CircularFloatingActionMenu:1.0.2'
+    compile 'com.nightonke:boommenu:1.0.9'
+    compile 'com.tencent.bugly:crashreport:2.6.5'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    debugCompile 'com.letv.sarrsdesktop:BlockCanaryExJRT:0.9.9.4'
+    releaseCompile 'com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:0.9.9.4'
+    testCompile 'com.letv.sarrsdesktop:BlockCanaryExJRTNoOp:0.9.9.4'
+    compile 'com.github.ivanljt:RCDialog:v1.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+}

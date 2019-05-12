@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/type_name">
+
+        <EditText
+            android:id="@+id/et_reader_category_name"
+            style="@style/TextInputLayoutStyle"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/borrow_count">
+
+        <EditText
+            android:id="@+id/et_borrow_count"
+            style="@style/TextInputLayoutStyle"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/borrow_mon">
+
+        <EditText
+            android:id="@+id/et_borrow_len"
+            style="@style/TextInputLayoutStyle"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_expire_date"
+        style="@style/TvDateStyle"
+        android:text="@string/expire_date"/>
+
+    <android.support.design.widget.TextInputLayout
+        style="@style/TextInputLayoutStyle"
+        android:hint="@string/remark">
+
+        <EditText
+            android:id="@+id/et_remark"
+            style="@style/TextInputLayoutStyle"
+            android:inputType="textEmailAddress"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_add_reader_type"
+        style="@style/BtnAddStyle"
+        android:text="@string/modify"/>
+</LinearLayout>

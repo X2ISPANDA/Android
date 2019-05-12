@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android.rdc.librarysystem.ui.TypeInfoActivity">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/include_toolbar"/>
+
+    <TextView
+        android:id="@+id/tv_select_all"
+        android:layout_width="43dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_bg_white_gray"
+        android:gravity="center"
+        android:text="@string/select_all"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="43dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_bg_white_transparent"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+
+    <com.android.rdc.librarysystem.ui.widget.ScrollControlViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include_toolbar">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+        </android.support.design.widget.TabLayout>
+    </com.android.rdc.librarysystem.ui.widget.ScrollControlViewPager>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add"
+        app:background="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimary"
+        tools:targetApi="lollipop"/>
+</RelativeLayout>

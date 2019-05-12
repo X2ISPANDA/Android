@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.android.rdc.librarysystem.ui.ModifyReaderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/include_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/OverFlowMenuTheme"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/greenyellow"
+                android:backgroundTintMode="multiply"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_delete_white"
+                tools:ignore="ContentDescription"
+                tools:targetApi="lollipop"/>
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/reader_name">
+
+            <EditText
+                android:id="@+id/et_reader_name"
+                style="@style/TextInputLayoutStyle"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reader_type"/>
+
+            <Spinner
+                android:id="@+id/sp_reader_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@string/gender"/>
+
+            <RadioGroup
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_man"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/man"/>
+
+                <RadioButton
+                    android:id="@+id/rb_women"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/woman"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_enroll_date"
+            style="@style/TvDateStyle"
+            android:text="@string/enroll_date"/>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/company"
+            >
+
+            <EditText
+                android:id="@+id/et_company_name"
+                style="@style/TextInputLayoutStyle"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/home_address"
+            >
+
+            <EditText
+                android:id="@+id/et_home_address"
+                style="@style/TextInputLayoutStyle"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/contact_way"
+            >
+
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/TextInputLayoutStyle"
+                android:inputType="phone"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/email"
+            >
+
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/TextInputLayoutStyle"
+                android:inputType="textEmailAddress"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:hint="@string/remark">
+
+            <EditText
+                android:id="@+id/et_remark"
+                style="@style/TextInputLayoutStyle"
+                android:inputType="textEmailAddress"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_modify_reader"
+            style="@style/BtnAddStyle"
+            android:text="@string/modify"/>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
